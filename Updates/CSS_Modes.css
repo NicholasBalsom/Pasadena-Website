@@ -1,0 +1,22 @@
+
+.mode-toggle {
+    height: 2rem;
+    width: 2rem;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 5;
+    cursor: pointer;
+}
+.mode-theme,
+.lightmode-darkmode input:checked {
+    background: transparent;
+}
+
+.lightmode-darkmode input:checked ~ .title::before {
+    color: #fff;
+}
+    
+.lightmode-darkmode input:checked ~ .title::after {
+    color: black;
+}

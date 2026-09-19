@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="test-index.css">
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 8</div>
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Zgn-IRHTCtGFRYqHiI8FTsroMk3wVIc&ehbc=2E312F" width="100%" height="100%"></iframe>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 8</div>
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1f4nkEZlU0OQC5svy29kjIoX9Tuy_cII&ehbc=2E312F" width="100%" height="100%"></iframe>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 8</div>
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1I_htTeQU7uAaGK35ZtwFFaeiDQhgrV8&ehbc=2E312F" width="100%" height="100%"></iframe>
+</div>
+
+
+<div class="mySlides fade">
+    <div class="numbertext">4 / 8</div>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1o4ZH2sCMDKc1jrp9zEDD6YskVen8ETE&ehbc=2E312F"></iframe>
+</div>
+
+<div class="mySlides fade">
+    <div class="numbertext">5 / 8</div>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1zTzIKROVNF71spObOEbJQbivA9gBwH4&ehbc=2E312F"></iframe>
+</div>
+  
+<div class="mySlides fade">
+    <div class="numbertext">6 / 8</div>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1N8f1pKooojDzxdj-9ci-0PpaLQVDk5k&ehbc=2E312F"></iframe>
+</div>
+
+<div class="mySlides fade">
+    <div class="numbertext">7 / 8</div>
+    <iframe src="https://www.google.com/maps/d/embed?mid=1U0B9yQ6atmSzUSISF5vg-7ra7LoL-fw&hl=en&ehbc=2E312F"></iframe>
+</div>
+  
+  
+<div class="mySlides fade">
+    <div class="numbertext">8 / 8</div>
+    <iframe id="pasadena-beach" src="https://www.google.com/maps/d/u/0/embed?mid=1Xh5rIYh6wd6_1LVeGhqPYGVD_H0ybA8&ehbc=2E312F"></iframe>
+</div>
+
+<a class="prev"  onclick="plusSlides(-1)"><</a>
+<a class="next"  onclick="plusSlides(1)">></a>
+
+</div>
+<br>
+
+<div>
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+  <span class="dot" onclick="currentSlide(7)"></span> 
+  <span class="dot" onclick="currentSlide(8)"></span>
+</div>
+
+<h1 id="CHANGE">placeholder1</h1>
+
+<script>
+
+let SLIDE_C = 1;
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+  Slide_num_pic(SLIDE_C += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+  Slide_num_pic(SLIDE_C = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+
+
+function Slide_num_pic(n){
+if(n < 1){Slide_pic(SLIDE_C = 8);}
+else if(n > 8){Slide_pic(SLIDE_C = 1);}
+else{Slide_pic(SLIDE_C = n);}
+
+}
+
+function Slide_pic(n){
+if(n == 1){document.getElementById('CHANGE').innerHTML = 'placeholder1'}
+if(n == 2){document.getElementById('CHANGE').innerHTML = 'placeholder2'}
+if(n == 3){document.getElementById('CHANGE').innerHTML = 'placeholder3'}
+if(n == 4){document.getElementById('CHANGE').innerHTML = 'placeholder4'}
+if(n == 5){document.getElementById('CHANGE').innerHTML = 'placeholder5'}
+if(n == 6){document.getElementById('CHANGE').innerHTML = 'placeholder6'}
+if(n == 7){document.getElementById('CHANGE').innerHTML = 'placeholder7'}
+if(n == 8){document.getElementById('CHANGE').innerHTML = 'placeholder8'}
+}
+
+
+
+</script>
+
+
+
+
+</body>
+</html> 

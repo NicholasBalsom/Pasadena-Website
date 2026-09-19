@@ -1,0 +1,25 @@
+::-webkit-scrollbar {
+    position: absolute;
+    right: 4px;
+    background: rgb(65, 65, 65);
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 15px;
+    background: rgb(65, 65, 65);
+    margin-block: 1px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background: rgb(125, 125, 125);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(115, 115, 115);
+}
+@supports (scrollbar-color: #888 rgb(65, 65, 65)) {
+    *{
+       scrollbar-color: #888 rgb(65, 65, 65);
+       scrollbar-width: thin;
+       border-radius: 15px;  
+    }
+}
